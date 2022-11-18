@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Deep Link"/>
+
+    <TextView
+        android:id="@+id/url_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/data_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Url for open App:"/>
+
+    <TextView
+        android:id="@+id/url_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/url_title_text_view"
+        app:layout_constraintBottom_toBottomOf="@+id/url_title_text_view"
+        app:layout_constraintStart_toEndOf="@+id/url_title_text_view"
+        android:background="@drawable/style_form_border_corner"
+        android:drawableEnd="@drawable/ic_content_copy"
+        android:drawablePadding="8dp"
+        android:padding="5dp"
+        android:layout_marginStart="10dp"
+        android:text="https://www.test.com"/>
+
+    <TextView
+        android:id="@+id/opened_from_url_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/data_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:text="Opened from Url"/>
+
+    <TextView
+        android:id="@+id/data_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/url_title_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Data from deep link:"/>
+
+    <TextView
+        android:id="@+id/data_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/data_title_text_view"
+        app:layout_constraintBottom_toBottomOf="@+id/data_title_text_view"
+        app:layout_constraintStart_toEndOf="@+id/data_title_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/style_form_border_corner"
+        android:maxLines="4"
+        android:padding="5dp"
+        android:layout_marginStart="10dp"
+        android:hint="Data"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
