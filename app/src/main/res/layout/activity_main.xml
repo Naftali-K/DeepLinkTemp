@@ -77,4 +77,50 @@
         android:layout_marginStart="10dp"
         android:hint="Data"/>
 
+    <TextView
+        android:id="@+id/user_id_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/data_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="User ID:"/>
+
+    <TextView
+        android:id="@+id/user_id_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/user_id_title_text_view"
+        app:layout_constraintBottom_toBottomOf="@+id/user_id_title_text_view"
+        app:layout_constraintStart_toEndOf="@+id/user_id_title_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/style_form_border_corner"
+        android:maxLines="4"
+        android:padding="5dp"
+        android:layout_marginStart="10dp"
+        android:hint="User ID from deep link"/>
+
+    <TextView
+        android:id="@+id/post_id_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/user_id_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="Post ID:"/>
+
+    <TextView
+        android:id="@+id/post_id_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/post_id_title_text_view"
+        app:layout_constraintBottom_toBottomOf="@+id/post_id_title_text_view"
+        app:layout_constraintStart_toEndOf="@+id/post_id_title_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/style_form_border_corner"
+        android:maxLines="4"
+        android:padding="5dp"
+        android:layout_marginStart="10dp"
+        android:hint="Post ID from deep link"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

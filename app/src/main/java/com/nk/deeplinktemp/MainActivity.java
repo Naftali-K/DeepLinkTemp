@@ -13,11 +13,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Test_Code";
 
-    private TextView urlTextView, openedFromUrlTextView, dataTextView;
+    private TextView urlTextView, openedFromUrlTextView, dataTextView, userIdTextView, postIdTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "onCreate: Open by URL link: \nAction: " + action + "\nData: " + data.toString());
             openedFromUrlTextView.setVisibility(View.VISIBLE);
             dataTextView.setText(data.toString());
+            getInfoFromUri(data);
         }
 
         urlTextView.setOnClickListener(new View.OnClickListener() {
@@ -48,11 +51,32 @@ public class MainActivity extends AppCompatActivity {
         urlTextView = findViewById(R.id.url_text_view);
         openedFromUrlTextView = findViewById(R.id.opened_from_url_text_view);
         dataTextView = findViewById(R.id.data_text_view);
+
+        userIdTextView = findViewById(R.id.user_id_text_view);
+        postIdTextView = findViewById(R.id.post_id_text_view);
     }
 
     private void copyText(Context context, String textLabel, String textForCopy){
         ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clipData = ClipData.newPlainText(textLabel, textForCopy);
         clipboardManager.setPrimaryClip(clipData);
+    }
+
+    private void getInfoFromUri(Uri uri) {
+        String urlString = uri.toString();
+//        Log.d(TAG, "getInfoFromUri: String URL: " + urlString);
+        String[] urlSplit = urlString.split("/");
+//        Log.d(TAG, "getInfoFromUri: List strings: " + urlSplit.toString() + "\nList size: " + urlSplit.length);
+
+        String section = urlSplit[urlSplit.length-2];
+        String id = urlSplit[urlSplit.length-1];
+        Log.d(TAG, "getInfoFromUri: Open \tSection: " + section + "\tID: " + id);
+
+        if (section.equals(SectionsEnum.POST.getSectionString())) {
+            postIdTextView.setText(id);
+        }
+        if (section.equals(SectionsEnum.USER.getSectionString())) {
+            userIdTextView.setText(id);
+        }
     }
 }
