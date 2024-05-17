@@ -15,6 +15,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * https://developer.android.com/training/app-links - about deep link
+ * https://developer.android.com/training/app-links/verify-android-applinks#manual-verification - verification deep link
+ *
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Test_Code";
